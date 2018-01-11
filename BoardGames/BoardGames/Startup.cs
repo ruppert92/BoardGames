@@ -64,6 +64,7 @@ namespace BoardGames
             });
 
             // Add application services.
+            services.AddSingleton<IConfiguration>(Configuration);
             services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
 

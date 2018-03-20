@@ -1,0 +1,31 @@
+<div class="col-sm-12">
+  <mat-table [dataSource]="datasource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="minPlayers">
+      <mat-header-cell *matHeaderCellDef> Min Players </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.minPlayers}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="maxPlayers">
+      <mat-header-cell *matHeaderCellDef> Max Players </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.maxPlayers}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="minLength">
+      <mat-header-cell *matHeaderCellDef> Min Length </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.minLengthMinutes}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="maxLength">
+      <mat-header-cell *matHeaderCellDef> Max Length </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.maxLengthMinutes}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="played">
+      <mat-header-cell *matHeaderCellDef> Played </mat-header-cell>
+      <mat-cell *matCellDef="let boardGame"> {{boardGame.played ? 'Y' : 'N'}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
